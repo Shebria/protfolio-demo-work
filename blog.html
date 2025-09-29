@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Services | Portfolio</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Template CSS -->
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/styleSwitcher.css">
+
+  <!-- Alternate Skins -->
+  <link rel="stylesheet" class="alternate-style" title="pink" href="css/skins/pink.css">
+  <link rel="stylesheet" class="alternate-style" title="blue" href="css/skins/blue.css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="green" href="css/skins/green.css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="orange" href="css/skins/orange.css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="yellow" href="css/skins/yellow.css" disabled>
+
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <style>
+    :root {
+      --skin-color: #ff4d5a;
+      --bg-color: #0f2027;
+      --text-color: #fff;
+      --card-bg: rgba(255, 255, 255, 0.08);
+    }
+
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: var(--bg-color);
+      color: var(--text-color);
+      scroll-behavior: smooth;
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    /* Particles Background */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    }
+
+    .main-container {
+      position: relative;
+      z-index: 1;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 50px;
+      font-size: 2.5rem;
+      color: var(--skin-color);
+    }
+
+    .service-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .service-item {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border-radius: 20px;
+      padding: 30px;
+      flex: 1 1 250px;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .service-item i {
+      font-size: 50px;
+      color: var(--skin-color);
+      margin-bottom: 20px;
+    }
+
+    .service-item h4 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .service-item p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background-color: var(--skin-color);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e13b48;
+    }
+
+    /* Responsive */
+    @media(max-width: 992px) {
+      .service-row {
+        flex-direction: column;
+        gap: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<!-- Blog Section -->
+      <section class="blog section" id="blog">
+        <div class="container">
+          <div class="row">
+            <div class="section-title padd-15">
+              <h2>Latest Blog</h2>
+            </div>
+          </div>
+          <div class="row">
+            <!-- Blog Item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner shadow-dark">
+                <div class="blog-img">
+                  <img src="images/blog/1.jpg" alt="">
+                  <div class="blog-date">
+                    4 jun 2020
+                  </div>
+                </div>
+                <div class="blog-info">
+                  <h4 class="blog-title">Responsive Web Design</h4>
+                  <p class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo
+                    quam, eum alias id, repellendus magni, quas.</p>
+                  <p class="blog-tags">Tags : <a href="#">Html</a> , <a href="#">css</a></p>
+                </div>
+              </div>
+            </div>
+            <!-- Blog Item End -->
+            <!-- Blog Item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner shadow-dark">
+                <div class="blog-img">
+                  <img src="images/blog/2.jpg" alt="">
+                  <div class="blog-date">
+                    4 jun 2020
+                  </div>
+                </div>
+                <div class="blog-info">
+                  <h4 class="blog-title">Creative Slideshow</h4>
+                  <p class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo
+                    quam, eum alias id, repellendus magni, quas.</p>
+                  <p class="blog-tags">Tags : <a href="#">Html</a> , <a href="#">Javascript</a></p>
+                </div>
+              </div>
+            </div>
+            <!-- Blog Item End -->
+            <!-- Blog Item -->
+            <div class="blog-item padd-15">
+              <div class="blog-item-inner shadow-dark">
+                <div class="blog-img">
+                  <img src="images/blog/3.jpg" alt="">
+                  <div class="blog-date">
+                    4 jun 2020
+                  </div>
+                </div>
+                <div class="blog-info">
+                  <h4 class="blog-title">Image Gallery Lightbox</h4>
+                  <p class="blog-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore, porro rem quod illo
+                    quam, eum alias id, repellendus magni, quas.</p>
+                  <p class="blog-tags">Tags : <a href="#">Javascript</a></p>
+                </div>
+              </div>
+            </div>
+            <!-- Blog Item End -->
+          </div>
+        </div>
+      </section>
+      <!-- Blog Section End -->
+
+  <!-- Particles Background -->
+  <div id="particles-js"></div>
+
+  <div class="main-container">
+    <h2 data-aos="fade-down">Our Services</h2>
+    <div class="service-row">
+      <div class="service-item" data-aos="fade-up" data-aos-delay="100">
+        <i class="fa fa-laptop"></i>
+        <h4>Web Design</h4>
+        <p>Modern and responsive web designs that look great on any device.</p>
+      </div>
+
+      <div class="service-item" data-aos="fade-up" data-aos-delay="200">
+        <i class="fa fa-code"></i>
+        <h4>Web Development</h4>
+        <p>Clean, scalable, and optimized code for websites and web apps.</p>
+      </div>
+
+      <div class="service-item" data-aos="fade-up" data-aos-delay="300">
+        <i class="fa fa-photo"></i>
+        <h4>Photography</h4>
+        <p>Professional photos and editing services for personal and business use.</p>
+      </div>
+
+      <div class="service-item" data-aos="fade-up" data-aos-delay="400">
+        <i class="fa fa-film"></i>
+        <h4>Video Editing</h4>
+        <p>Creative and high-quality video editing for all types of projects.</p>
+      </div>
+
+      <div class="service-item" data-aos="fade-up" data-aos-delay="500">
+        <i class="fa fa-rocket"></i>
+        <h4>SEO Optimization</h4>
+        <p>Boost your website’s visibility on search engines effectively.</p>
+      </div>
+
+      <div class="service-item" data-aos="fade-up" data-aos-delay="600">
+        <i class="fa fa-paint-brush"></i>
+        <h4>Logo Design</h4>
+        <p>Unique and memorable logos that reflect your brand identity.</p>
+      </div>
+    </div>
+
+    <div style="text-align:center; margin-top: 50px;">
+      <a href="contact.html" class="btn" data-aos="fade-up" data-aos-delay="700">Contact Us</a>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    // Initialize AOS
+    AOS.init({
+      duration: 1000,
+      easing: 'ease-in-out',
+      once: true,
+      mirror: false
+    });
+
+    // Particles JS
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": true },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 3 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": { "repulse": { "distance": 120 }, "push": { "particles_nb": 4 } }
+      },
+      "retina_detect": true
+    });
+  </script>
+  <script src="js/styleSwitcher.js"></script>
+
+</body>
+
+</html>

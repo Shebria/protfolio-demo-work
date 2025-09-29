@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <title>Personal Portfolio Template</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Template css Files -->
+  <link rel="stylesheet" href="css/style.css" type="text/css">
+<link rel="stylesheet" href="css/styleSwitcher.css" type="text/css">
+  <!-- Live Style Switcher - Demo Only -->
+  <link rel="stylesheet" class="alternate-style" title="pink" href="css/skins/pink.css" type="text/css">
+  <link rel="stylesheet" class="alternate-style" title="blue" href="css/skins/blue.css" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="green" href="css/skins/green.css" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="orange" href="css/skins/orange.css" type="text/css" disabled>
+  <link rel="stylesheet" class="alternate-style" title="yellow" href="css/skins/yellow.css" type="text/css" disabled>
+  
+  <!-- FontAwesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <style>
+  
+/* Ensure full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  
+  scroll-behavior: smooth;
+  background: none; /* body background removed since particles will show */
+}
+
+/* CSS Variables */
+:root {
+  --skin-color: #ff4d5a; 
+  --bg-color: #0f2027;
+  --text-color: #fff;
+  --card-bg: rgba(255, 255, 255, 0.08);
+}
+
+
+
+/* Particles Background */
+#particles-js {
+  position: fixed; /* fixed ensures it stays full screen */
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  z-index: 0;
+}
+
+/* Main container above particles */
+.main-container {
+  position: relative;
+  z-index: 1;
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Container & Text */
+.container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 40px 20px;
+}
+
+h2 {
+  text-align: left;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: var(--skin-color);
+}
+
+/* Services */
+
+.service-item {
+  background: var(--card-bg);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 30px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 15px 40px rgba(0,0,0,0.5);
+}
+
+.service-item i {
+  font-size: 50px;
+  color: var(--skin-color);
+  margin-bottom: 20px;
+}
+
+.service-item h4 {
+  margin-bottom: 15px;
+  font-size: 1.5rem;
+}
+
+.service-item p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #ddd;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 28px;
+  border-radius: 30px;
+  background-color: var(--skin-color);
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e13b48;
+}
+
+/* Dark mode */
+body.dark {
+  --bg-color: #121212;
+  --text-color: #fff;
+  --card-bg: rgba(255,255,255,0.05);
+}
+
+body.dark .service-item {
+  background: var(--card-bg);
+}
+
+body.dark .home-content .highlight,
+body.dark h2 {
+  color: #ff4d5a;
+}
+
+body.dark .btn {
+  background-color: #ff4d5a;
+}
+
+body.dark .btn:hover {
+  background-color: #e13b48;
+}
+
+
+    html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+    :root {
+      --skin-color: #ff4d5a; 
+      --bg-color: #0f2027;
+      --text-color: #fff;
+      --card-bg: rgba(255, 255, 255, 0.08);/* Accent Color */
+    }
+
+    /* Smooth Scroll */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    .main-container {
+  position: relative;
+  z-index: 1; /* ensures content is above particles */
+  padding: 60px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+body {
+      font-family: 'Montserrat', sans-serif;
+     /* background-color: var(--bg-color);*/
+      color: var(--text-color);
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    h2 {
+      text-align: left;
+      margin-bottom: 40px;
+      font-size: 2.5rem;
+      color: var(--skin-color);
+    }
+
+   .service-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 25px;
+  justify-content: center;  /* center the last row */
+}
+
+.service-row .service-item:nth-last-child(2):nth-child(odd),
+.service-row .service-item:last-child:nth-child(even) {
+  grid-column: 2 / span 2;  /* center 2 items */
+}
+
+    .service-item {
+      background: var(--card-bg);
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 30px;
+      flex: 1 1 250px;
+      max-width: 300px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .service-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.5);
+    }
+
+    .service-item i {
+      font-size: 50px;
+      color: var(--skin-color);
+      margin-bottom: 20px;
+    }
+
+.service-row .wide {
+  grid-column: span 2;   /* take 2 columns so 2 cards stay in the middle */
+}
+    .service-item h4 {
+      margin-bottom: 15px;
+      font-size: 1.5rem;
+    }
+
+    .service-item p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #ddd;
+    }
+.contact-row {
+  grid-column: 1 / -1; /* span across all columns */
+  text-align: center;
+  margin-top: 30px;
+}
+
+    .btn {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 28px;
+      border-radius: 30px;
+      background-color: var(--skin-color);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      background-color: #e13b48;
+    }
+    /* Particles Background */
+    #particles-js {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+      z-index: 0;
+      top: 0;
+      left: 0;
+    }
+
+    /* Glassmorphism Card */
+    .glass-card {
+      position: relative;
+      z-index: 1;
+      padding: 40px;
+      border-radius: 20px;
+      backdrop-filter: blur(12px);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      flex-wrap: wrap;
+      max-width: 1100px;
+      margin: auto;
+       margin-left: auto;
+      margin-right: 70px;
+    }
+
+    /* Profile Image */
+    .profile-pic {
+      width: 260px;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 5px solid rgba(255, 255, 255, 0.2);
+      box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.07) rotate(3deg);
+      box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Content */
+    .home-content {
+      max-width: 600px;
+      color: #fff;
+    }
+
+    .home-content h1 {
+      font-size: 2.8rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .home-content .highlight {
+      color: var(--skin-color);
+    }
+
+    .typed-text {
+      font-size: 1.6rem;
+      font-weight: 600;
+      margin-bottom: 15px;
+      color: var(--skin-color);
+    }
+
+    .intro-text {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* CTA Buttons */
+    .cta-buttons .btn {
+      margin-right: 15px;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn.hire-me {
+      background: var(--skin-color);
+      color: #fff;
+    }
+
+    .btn.hire-me:hover {
+      background: #e13b48;
+    }
+
+    .btn-outline {
+      border: 2px solid var(--skin-color);
+      background: transparent;
+      color: var(--skin-color);
+    }
+
+    .btn-outline:hover {
+      background: var(--skin-color);
+      color: #fff;
+    }
+
+    /* Social Links */
+    .social-links a {
+      font-size: 20px;
+      color: #ddd;
+      margin-right: 18px;
+      transition: all 0.3s ease;
+    }
+
+    .social-links a:hover {
+      color: var(--skin-color);
+      transform: translateY(-5px) scale(1.2);
+    }
+    body.dark {
+  --bg-color: #121212;
+  --text-color: #fff;
+  --card-bg: rgba(255, 255, 255, 0.05);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+body.dark .service-item {
+  background: var(--card-bg);
+}
+
+body.dark .home-content .highlight,
+body.dark h2 {
+  color: #ff4d5a; /* keep accent color same */
+}
+
+body.dark .btn {
+  background-color: #ff4d5a;
+  color: #fff;
+}
+
+body.dark .btn:hover {
+  background-color: #e13b48;
+}
+
+  </style>
+</head>
+
+<body>
+<!-- Particles Background -->
+<div id="particles-js"></div>
+
+  <!-- Preloader -->
+  <div class="preloader">
+    <div class="loader">
+
+    </div>
+  </div>
+  <!-- Preloader End -->
+
+  <!-- Main Container -->
+  <div class="main-container">
+    <!-- Aside -->
+    <div class="aside">
+      <!-- Nav Toggler Btn -->
+      <div class="nav-toggler">
+        <span></span>
+      </div>
+      <div class="aside-inner">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="#">Mosharraf</a>
+        </div>
+        <!-- Nav -->
+        <ul class="nav">
+          <li><a href="index.html" class="active"><i class="fa-solid fa-house"></i> Home</a></li>
+<li><a href="#about"><i class="fa-solid fa-user"></i> About</a></li>
+<li><a href="service.html"><i class="fa-solid fa-list"></i> Services</a></li>
+<li><a href="#portfolio"><i class="fa-solid fa-briefcase"></i> Portfolio</a></li>
+<li><a href="#blog"><i class="fa-solid fa-envelope"></i> Blog</a></li>
+<li><a href="contact.html"><i class="fa-solid fa-comments"></i> Contact</a></li>
+
+        </ul>
+        <!-- Copyright -->
+        <div class="copyright-text">
+          &copy; 2020 The Mosharraf
+        </div>
+      </div>
+    </div>
+    <!-- Aside End -->
+    <!-- Main Content -->
+    <div class="main-content">
+
+     
+  <!-- Particles.js -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/styleSwitcher.js"></script>
+  <script>
+    particlesJS("particles-js", {
+      "particles": {
+        "number": { "value": 90, "density": { "enable": true, "value_area": 800 } },
+        "color": { "value": "#ffffff" },
+        "shape": { "type": "circle" },
+        "opacity": { "value": 0.5, "random": true },
+        "size": { "value": 3, "random": true },
+        "line_linked": { "enable": true, "distance": 150, "color": "#ffffff", "opacity": 0.4, "width": 1 },
+        "move": { "enable": true, "speed": 3 }
+      },
+      "interactivity": {
+        "events": {
+          "onhover": { "enable": true, "mode": "repulse" },
+          "onclick": { "enable": true, "mode": "push" }
+        },
+        "modes": { "repulse": { "distance": 120 }, "push": { "particles_nb": 4 } }
+      },
+      "retina_detect": true
+    });
+  </script>
+ <!-- AOS JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      easing: "ease-in-out",
+      once: true,
+      mirror: false
+    });
+  </script>
+
+
+      <!-- Service Section -->
+      <section class="service section" id="services">
+        <div class="container">
+          <div class="section-title padd-15">
+              <h2>Services</h2>
+            </div>
+          <div class="service-row">
+          </div>
+          <div class="service-row">
+            <!-- Service item -->
+            <div class="service-item padd-15" data-aos="fade-up" data-aos-delay="100">
+              <div class="service-item-inner">
+                <div class="icon "><i class="fa fa-laptop"></i></div>
+                <h4>Web Design</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.</p>
+              </div>
+            </div>
+            <!-- Service item End -->
+            <!-- Service item -->
+            <div class="service-item padd-15">
+              <div class="service-item-inner">
+                <div class="icon gradient2"><i class="fa fa-photo" data-aos="fade-up" data-aos-delay="100"></i></div>
+                <h4>Photography</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.</p>
+              </div>
+            </div>
+            <!-- Service item End -->
+            <!-- Service item -->
+            <div class="service-item padd-15"  data-aos-delay="100">
+              <div class="service-item-inner">
+                <div class="icon "><i class="fa fa-code"></i></div>
+                <h4>Web Development</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.</p>
+              </div>
+            </div>
+            <!-- Service item End -->
+            <!-- Service item -->
+            <div class="service-item padd-15"  data-aos-delay="100">
+              <div class="service-item-inner">
+                <div class="icon"><i class="fa fa-film"></i></div>
+                <h4>Video Editing</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.</p>
+              </div>
+            </div>
+            <!-- Service item End -->
+            <!-- Service item -->
+            <div class="service-item padd-15"  data-aos-delay="100">
+              <div class="service-item-inner">
+                <div class="icon"><i class="fa fa-rocket"></i></div>
+                <h4>Seo Optimization</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.</p>
+              </div>
+            </div>
+            <!-- Service Item End -->
+             
+            <!-- Service Item -->
+            <div class="service-item padd-15" data-aos-delay="100">
+              <div class="service-item-inner">
+                <div class="icon"><i class="fa fa-paint-brush"></i></div>
+                <h4>Logo Design</h4>
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry Lorem Ipsum.</p>
+              </div>
+            </div>
+<!-- ✅ NEW Service Item -->
+      <div class="service-item padd-15">
+        <div class="service-item-inner">
+          <div class="icon"><i class="fa fa-mobile-alt"></i></div>
+          <h4>App Development</h4>
+          <p>Custom mobile applications designed and developed for both Android and iOS platforms.</p>
+        </div>
+      </div>
+      <!-- Service Item End -->
+           <!-- ✅ NEW Service Item -->
+      <div class="service-item padd-15">
+        <div class="service-item-inner">
+          <div class="icon"><i class="fa fa-chart-line"></i></div>
+          <h4>Digital Marketing</h4>
+          <p>Helping brands grow online with effective marketing, social media, and ad campaigns.</p>
+        </div>
+      </div>
+      <!-- Service Item End -->
+
+      <div class="contact-row"></div>
+      <div style="text-align:center;">
+        <a href="contact.html" class="btn">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Service Section End -->
+      <!-- Service Section End -->
+    <!-- Main Content End -->
+  </div>
+  <!-- Main Container End -->
+
+  <!-- Lightbox -->
+  <div class="lightbox">
+    <div class="lightbox-content">
+      <div class="lightbox-close">&times;</div>
+      <img src="" alt="" onclick="nextItem()" class="lightbox-img">
+      <div class="lightbox-caption">
+        <div class="caption-text"></div>
+        <div class="caption-counter"></div>
+      </div>
+    </div>
+    <div class="lightbox-controls">
+      <div class="prev-item" onclick="prevItem()"><i class="fa fa-angle-left"></i></div>
+      <div class="next-item" onclick="nextItem()"><i class="fa fa-angle-right"></i></div>
+    </div>
+  </div>
+  <!-- Lightbox End -->
+
+  <!-- Live Style Switcher - Demo Only -->
+  <div class="style-switcher">
+    <div class="toggle-style-switcher">
+      <i class="fa-solid fa-cog fa-spin"></i>
+    </div>
+    <h5>Style Switcher</h5>
+    <ul>
+      <li><a href="javascript:void(0);" title="pink" style="background-color: #ec1839;" onclick="setActiveStyle('pink')"></a></li>
+      <li><a href="javascript:void(0);" title="blue" style="background-color: #2196f3;" onclick="setActiveStyle('blue')"></a></li>
+      <li><a href="javascript:void(0);" title="orange" style="background-color: #fa5b0f;" onclick="setActiveStyle('orange')"></a></li>
+      <li><a href="javascript:void(0);" title="yellow" style="background-color: #ffb400;" onclick="setActiveStyle('yellow')"></a></li>
+      <li><a href="javascript:void(0);" title="green" style="background-color: #72b626;" onclick="setActiveStyle('green')"></a></li>
+    </ul>
+    <h5>Body Skin</h5>
+    <label>
+      <input type="radio" class="body-skin" name="body-skin" value="light" checked="true"> Light
+    </label>
+    <label>
+      <input type="radio" class="body-skin" name="body-skin" value="dark"> Dark
+    </label>
+  </div>
+  <!-- Live Style Switcher - Demo Only End -->
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script src="js/ityped.min.js"></script>
+  <script src="js/script.js"></script>
+  <script src="js/styleSwitcher.js"></script>
+  <script>
+    AOS.init({ duration: 1000, easing: 'ease-in-out', once: true, mirror: false });
+
+    // Responsive toggle for aside
+    document.addEventListener("DOMContentLoaded", function () {
+      const navToggler = document.querySelector(".nav-toggler");
+      const aside = document.querySelector(".aside");
+      navToggler.addEventListener("click", () => {
+        aside.classList.toggle("open");
+      });
+    });
+    // Set active color skin
+function setActiveStyle(color) {
+    const links = document.querySelectorAll('.alternate-style');
+    links.forEach(link => {
+        link.disabled = link.title !== color;
+    });
+}
+
+// Change body skin
+function bodySkinChange(skin) {
+    if (skin === 'dark') {
+        document.body.classList.add('dark');
+    } else {
+        document.body.classList.remove('dark');
+    }
+}
+// Add event listener to radio buttons if not inline
+document.querySelectorAll('input[name="body-skin"]').forEach(radio => {
+  radio.addEventListener('change', (e) => {
+    bodySkinChange(e.target.value);
+  });
+  });
+// Toggle switcher panel
+document.querySelector('.toggle-style-switcher').addEventListener('click', () => {
+    document.querySelector('.style-switcher').classList.toggle('open');
+});
+
+  </script>
+</body>
+
+</html>
